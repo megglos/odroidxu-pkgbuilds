@@ -61,8 +61,8 @@ build() {
 
   ./configure --prefix=$_prefix --exec-prefix=$_prefix   \
     --disable-afpclient \
-    --disable-airplay \
-    --disable-airtunes \
+    --enable-airplay \
+    --enable-airtunes \
     --disable-debug \
     --disable-external-ffmpeg \
     --disable-gl \
