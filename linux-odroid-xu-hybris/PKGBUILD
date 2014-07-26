@@ -4,7 +4,7 @@
 buildarch=4
 
 pkgbase=linux-odroid-xu-hybris
-_commit=87038e96eddfdbf0d6405443dede1a68d120b7a9
+_commit=0c1a585f95a27b4aecf0f7216676fcb3d854a599
 _srcname=linux-${_commit}
 _kernelname=${pkgbase#linux}
 _desc="ODROID-XU-Hybris"
@@ -18,7 +18,7 @@ options=('!strip')
 source=("https://github.com/megglos/linux/archive/${_commit}.tar.gz"
 	'http://archlinuxarm.org/builder/src/0001-cgroup-add-xattr-support.patch'
         'config')
-md5sums=('817169ab645e692e60f8fe2f7f75e7c4'
+md5sums=('0da43156de0183cc813d0c21de6fbcd4'
         '9f62f6e7127aa5dcdadde550c88def95'
 	 '46f95b2d9d4f5eb5eab0ced6b4e64d58')
 prepare() {
