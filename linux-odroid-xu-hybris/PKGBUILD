@@ -4,11 +4,11 @@
 buildarch=4
 
 pkgbase=linux-odroid-xu-hybris
-_commit=0c1a585f95a27b4aecf0f7216676fcb3d854a599
+_commit=8de93fe970ba9109f48cfda5ef73ebdc7748c8f4
 _srcname=linux-${_commit}
 _kernelname=${pkgbase#linux}
 _desc="ODROID-XU-Hybris"
-pkgver=3.4.98
+pkgver=3.4.103
 pkgrel=1
 arch=('armv7h')
 url="http://www.kernel.org/"
@@ -16,16 +16,12 @@ license=('GPL2')
 makedepends=('xmlto' 'docbook-xsl' 'kmod' 'inetutils' 'bc' 'git')
 options=('!strip')
 source=("https://github.com/megglos/linux/archive/${_commit}.tar.gz"
-	'http://archlinuxarm.org/builder/src/0001-cgroup-add-xattr-support.patch'
         'config')
-md5sums=('0da43156de0183cc813d0c21de6fbcd4'
-        '9f62f6e7127aa5dcdadde550c88def95'
+md5sums=('ada3934cae1c3e015da5c12dd8b4dc5f'
 	 '46f95b2d9d4f5eb5eab0ced6b4e64d58')
 prepare() {
   cd "${srcdir}/${_srcname}"
   cat "${srcdir}/config" > ./.config
-
-  git apply ../0001-cgroup-add-xattr-support.patch
 
   # add pkgrel to extraversion
   sed -ri "s|^(EXTRAVERSION =)(.*)|\1 \2-${pkgrel}|" Makefile
